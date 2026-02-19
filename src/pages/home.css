@@ -1,4 +1,4 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -18,27 +18,9 @@
   backdrop-filter: blur(10px);
 }
 
-/* ================= MAIN ================= */
-.main {
-  background-color: #FFFFFF;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  text-align: center;
-}
-
 /* ================= LOGO ================= */
-.Gold {
+.Black, .Gold {
   color: gold;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.Black {
-  color: black;
   font-size: 24px;
   font-weight: bold;
 }
@@ -47,13 +29,14 @@
 .navigation {
   display: flex;
   align-items: center;
-  gap: 25px; /* space between links */
+  gap: 25px;
 }
 
 .navigation a {
   color: black;
   text-decoration: none;
   transition: 0.3s ease;
+  font-size: large;
 }
 
 .navigation a:hover {
@@ -62,13 +45,14 @@
 
 /* ================= BUTTON ================= */
 .navigation .home-Login {
-  margin-left: auto; /* push button to the right */
+  margin-left: auto;
   padding: 8px 20px;
   background-color: gold;
   border: 2px solid black;
   border-radius: 5px;
   color: black;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s ease;
 }
 
@@ -76,6 +60,64 @@
   background-color: black;
   color: gold;
   border: 2px solid gold;
+}
+
+/* ================= MAIN ================= */
+main {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;           /* Allows multiple boxes in a row */
+  gap: 20px;                 /* Space between boxes */
+  justify-content: center;   /* Center the boxes */
+  padding: 40px;
+}
+
+/* ================= BOX ================= */
+.box {
+  width: 250px;
+  height: 350px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;    /* Stack image on top, info below */
+  overflow: hidden;          /* Keep image rounded inside box */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= BOX IMAGE ================= */
+.box-image {
+  flex: 1;                  /* Top 50% of box */
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= BOX INFO ================= */
+.box-info {
+  flex: 1;                  /* Bottom 50% of box */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.box-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.box-info p {
+  font-size: 14px;
+  color: #555;
 }
 
 /* ================= FOOTER ================= */

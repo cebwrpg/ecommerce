@@ -26,7 +26,7 @@ function Login() {
   };
 
   return (
-    <UserLayout title="Login Form">
+    <UserLayout className="login-heading" title="Login Form">
       <UserDetails
         email={email}
         setEmail={setEmail}
