@@ -93,3 +93,50 @@ body {
 .login-link{
   text-decoration: none;
 }
+/* ================= ROLE TABS ================= */
+
+/* Tabs container inside form-box */
+.role-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Each tab */
+.role-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: 0.3s ease;
+}
+
+/* Icons */
+.role-tab i {
+  font-size: 16px;
+}
+
+/* Active tab (selected role) */
+.role-tab.active {
+  background-color: #e6e6ff;      /* light blue (matches your theme) */
+  border: 1px solid #3030E8;
+  color: #3030E8;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.role-tab:hover {
+  background-color: #f0f0ff;
+}
