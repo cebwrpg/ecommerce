@@ -1,88 +1,157 @@
-/* Reset */
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  font-size: 17px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.home-container {
+  width: 100%;          /* ADD THIS */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ================= BODY ================= */
+body {
+  background-color: #f4f4f4;
+}
+
+/* ================= HOME CONTAINER ================= */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================= HEADER ================= */
 .header {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px 40px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 18px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid black;
-  backdrop-filter: blur(10px);
-}
-
-/* ================= MAIN ================= */
-.main {
-  background-color: #FFFFFF;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  text-align: center;
+  border-bottom: 2px solid #000;
 }
 
 /* ================= LOGO ================= */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .Gold {
-  color: gold;
-  font-size: 24px;
-  font-weight: bold;
+  color: #eab308;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .Black {
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
+  color: #111;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* ================= NAVIGATION ================= */
 .navigation {
   display: flex;
   align-items: center;
-  gap: 25px; /* space between links */
+  gap: 35px;
 }
 
 .navigation a {
-  color: black;
   text-decoration: none;
+  color: #111;
+  font-size: 16px;
   transition: 0.3s ease;
 }
 
 .navigation a:hover {
-  color: gold;
+  color: #eab308;
 }
 
-/* ================= BUTTON ================= */
-.navigation .home-Login {
-  margin-left: auto; /* push button to the right */
-  padding: 8px 20px;
-  background-color: gold;
-  border: 2px solid black;
-  border-radius: 5px;
-  color: black;
+/* ================= LOGIN BUTTON ================= */
+.home-Login {
+  padding: 8px 22px;
+  border-radius: 6px;
+  border: 1.5px solid #000;
+  font-weight: 600;
   cursor: pointer;
+  color: #111;
+  background: linear-gradient(
+    to right,
+    #fde68a,
+    #facc15,
+    #eab308
+  );
+  box-shadow: 0 4px 10px rgba(234, 179, 8, 0.3);
   transition: 0.3s ease;
 }
 
-.navigation .home-Login:hover {
-  background-color: black;
-  color: gold;
-  border: 2px solid gold;
+.home-Login:hover {
+  background: linear-gradient(
+    to right,
+    #fcd34d,
+    #fbbf24,
+    #d97706
+  );
+  transform: translateY(-2px);
+}
+
+/* ================= MAIN ================= */
+.main {
+  flex: 1;  /* pushes footer down */
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.main p {
+  font-size: 18px;
+  color: #444;
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background-color: white;
-  color: black;
+  width: 100%;
+  background-color: #ffffff;
   text-align: center;
-  padding: 20px;
-  border-top: 3px solid black;
+  padding: 18px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+
+  .main h1 {
+    font-size: 24px;
+  }
+
+  .main p {
+    font-size: 16px;
+  }
 }

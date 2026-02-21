@@ -1,121 +1,127 @@
-/* Parent container to center everything */
-.container {
+/* ================= PAGE BACKGROUND ================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
-}
-
-/* Center text inside container */
-.center-content {
-  text-align: center;
-}
-
-/* Error message styling */
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
 /* ================= LOGIN BOX ================= */
 .form-box {
   display: flex;
   flex-direction: column;
-  gap: 20px;               /* Space between inputs/buttons */
-  width: 400px;            /* Width of the box */
-  padding: 40px;           /* Padding inside box */
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  gap: 20px;
+  width: 400px;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
 }
 
-/* Input fields */
+/* ================= INPUT FIELDS ================= */
 input {
-  padding: 12px 15px;      /* Height & spacing inside input */
-  font-size: 18px;
-  border-radius: 8px;
-  border: 1px solid #181212; /* dark border */
+  padding: 14px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  transition: 0.3s ease;
 }
 
-/* Button styling */
+input:focus {
+  border-color: #facc15;
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2);
+}
+
+/* ================= LOGIN BUTTON (GOLD IMAGE STYLE) ================= */
 button {
-  padding: 12px 30px;
-  font-size: 20px;
-  border-radius: 8px;
-  border: 2px solid #3030E8;
-  background-color: #5151CD;
-  color: white;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  color: #1f2937;
+
+  background: linear-gradient(
+    to right,
+    #fde68a,
+    #facc15,
+    #eab308
+  );
+
+  box-shadow: 0 8px 20px rgba(234, 179, 8, 0.35);
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #3030E8;
-  border-color: #5151CD;
+  background: linear-gradient(
+    to right,
+    #fcd34d,
+    #fbbf24,
+    #d97706
+  );
+  transform: translateY(-2px);
 }
 
-/* Body font */
-body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* ================= FORGOT PASSWORD ================= */
+.forgot-container {
+  text-align: center;
+  margin-top: 12px;
 }
 
-/* Actions container */
+.forgot-link {
+  color: #9ca3af;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #4b5563;
+}
+
+/* ================= REGISTER ================= */
 .actions {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
 }
 
-/* Login actions (like remember me + forgot) */
-.login-actions {
-  display: flex;
-  justify-content: space-between; /* Fixes too much gap issue */
-  align-items: center;
-  width: 100%;
-}
-
-/* Links */
-.register-link,
-.forgot-link {
-  color: blue;
-  transition: 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
-  line-height: 1;
-  display: inline-block;
-  font-size: 0.9rem;
-  white-space: nowrap; /* Prevent text from wrapping */
-}
-.register-link,.forgot-link{
-  color:darkblue;
-}
-.login-link{
+.register-link {
+  color: #eab308;
+  font-weight: 500;
   text-decoration: none;
 }
-/* ================= ROLE TABS ================= */
 
-/* Tabs container inside form-box */
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= ROLE TABS (IMAGE STYLE) ================= */
 .role-tabs {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f5f5f5;
-  border-radius: 10px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
   padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
-/* Each tab */
 .role-tab {
   flex: 1;
   text-align: center;
-  padding: 10px 5px;
+  padding: 10px;
   font-size: 14px;
-  color: #555;
+  color: #9ca3af;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,20 +129,15 @@ body {
   transition: 0.3s ease;
 }
 
-/* Icons */
+/* Active tab = GOLD like image */
+.role-tab.active {
+  background-color: #fff7d6;
+  border: 1px solid #fde047;
+  color: #eab308;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(234, 179, 8, 0.15);
+}
+
 .role-tab i {
   font-size: 16px;
-}
-
-/* Active tab (selected role) */
-.role-tab.active {
-  background-color: #e6e6ff;      /* light blue (matches your theme) */
-  border: 1px solid #3030E8;
-  color: #3030E8;
-  font-weight: 600;
-}
-
-/* Hover effect */
-.role-tab:hover {
-  background-color: #f0f0ff;
 }

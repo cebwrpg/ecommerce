@@ -12,7 +12,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Login() {
-
   const navigate = useNavigate();
 
   // 🔐 Form States
@@ -27,7 +26,6 @@ function Login() {
 
   // 🚀 Handle Login
   const handleLogin = async () => {
-
     const errorMessage = validateLogin(email, password);
     if (errorMessage) {
       setError(errorMessage);
@@ -42,7 +40,6 @@ function Login() {
       const response = await loginUser(email, password, role);
 
       if (response.data.success) {
-
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", role);
 
@@ -51,11 +48,9 @@ function Login() {
         setTimeout(() => {
           navigate("/Home");
         }, 500);
-
       } else {
         setMessage("❌ Login Unsuccessful");
       }
-
     } catch (err) {
       setMessage("❌ Server Error / Invalid Credentials");
       console.error(err);
@@ -64,10 +59,8 @@ function Login() {
 
   return (
     <UserLayout title="Login Form">
-
       {/* ⭐ ROLE TABS */}
       <div className="role-tabs">
-
         <div
           className={`role-tab ${role === "user" ? "active" : ""}`}
           onClick={() => setRole("user")}
@@ -91,7 +84,6 @@ function Login() {
           <i className="fa-solid fa-gear"></i>
           <span>Admin</span>
         </div>
-
       </div>
 
       {/* Inputs */}
@@ -110,9 +102,7 @@ function Login() {
         <p
           className="response-message"
           style={{
-            color: message.includes("Successful")
-              ? "green"
-              : "red"
+            color: message.includes("Successful") ? "green" : "red",
           }}
         >
           {message}
@@ -120,18 +110,14 @@ function Login() {
       )}
 
       <div className="login-actions">
-        <button
-          onClick={handleLogin}
-          disabled={!email || !password}
-        >
+        <button onClick={handleLogin} disabled={!email || !password}>
           Login
         </button>
-
-        <p>
-          <Link to="/forgot-password" className="register-Link">
-            Forgot Password?
-          </Link>
-        </p>
+      </div>
+      <div className="forgot-container">
+        <Link to="/forgot-password" className="forgot-link">
+          Forgot Password?
+        </Link>
       </div>
 
       <div className="actions">
@@ -142,7 +128,6 @@ function Login() {
           </Link>
         </p>
       </div>
-
     </UserLayout>
   );
 }
