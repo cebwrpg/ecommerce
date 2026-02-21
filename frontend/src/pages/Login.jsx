@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/UserApi";
 import "../styles/Login.css";
 import { validateLogin } from "../components/validation.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // ✅ Font Awesome (install if not added)
 // npm install @fortawesome/fontawesome-free
