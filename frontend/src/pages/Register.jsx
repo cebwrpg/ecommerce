@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import UserDetails from "../components/userDetails";
 import UserLayout from "../components/userLayout";
+import { Link, useNavigate } from "react-router-dom"; // ADD useNavigate
 import { registerUser } from "../api/UserApi";
-import { Link } from "react-router-dom";
 import "../styles/Login.css";
 import { validateRegister } from "../components/validation.jsx";
 
 function Register() {
-
+  const navigate = useNavigate(); // INITIALIZE useNavigate
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -50,7 +50,7 @@ function Register() {
         setMessage("✅ Registration Successful");
         setTimeout(() => {
           navigate("/Home"); // change route if needed
-        }, 100);
+        }, 1000);
       } else {
         setMessage("❌ Registration Unsuccessful");
       }
