@@ -43,8 +43,8 @@ function Login() {
 
         // 🚀 Redirect after login
         setTimeout(() => {
-          navigate("/dashboard"); // change route if needed
-        }, 1000);
+          navigate("/Home"); // change route if needed
+        }, 100);
 
       } else {
         setMessage("❌ Login Unsuccessful");
