@@ -117,11 +117,11 @@ button:hover {
 .role-tab {
   flex: 1;
   text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  padding: 7px;
+  font-size: 10px;
   color: #9ca3af;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,4 +140,74 @@ button:hover {
 
 .role-tab i {
   font-size: 16px;
+}
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+
+  /* Page background */
+  body {
+    padding: 20px;
+    height: auto;
+  }
+
+  /* Login box */
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+    border-radius: 14px;
+  }
+
+  /* Inputs */
+  input {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  /* Button */
+  button {
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  /* Role tabs container */
+  .role-tabs {
+    gap: 5px;
+    padding: 4px;
+  }
+
+  /* Each role tab */
+  .role-tab {
+    font-size: 11px;
+    padding: 8px 4px;
+  }
+
+  .role-tab i {
+    font-size: 14px;
+  }
+
+  /* Forgot password */
+  .forgot-link {
+    font-size: 13px;
+  }
+
+  /* Register text */
+  .actions {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 400px) {
+
+  .form-box {
+    padding: 20px;
+  }
+
+  .role-tab {
+    font-size: 10px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }

@@ -149,3 +149,76 @@ body {
     font-size: 16px;
   }
 }
+/* ================= PHONE VIEW FIX ================= */
+@media (max-width: 768px) {
+
+  /* Container full width */
+  .home-container {
+    width: 100%;
+  }
+  .home-Login {
+  padding: 4px;
+  font-size: 10px;
+  width: 60px
+}
+
+  /* Header spacing */
+  .header {
+    padding: 10px 15px;
+  }
+
+  /* Logo size */
+  .Gold,
+  .Black {
+    font-size: 16px;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  /* Navigation same row */
+  .navigation {
+    gap: 12px;
+    flex-wrap: wrap;   /* prevents overflow */
+  }
+
+  .navigation a {
+    font-size: 13px;
+  }
+
+  /* Login button resize */
+  .home-Login {
+    padding: 5px 12px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+
+  /* Main text */
+  .main h1 {
+    font-size: 22px;
+  }
+
+  .main p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 12px;
+    padding: 12px;
+  }
+}
+@media (max-width: 400px) {
+
+  .navigation {
+    gap: 8px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+  }
+
+  .home-Login {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}

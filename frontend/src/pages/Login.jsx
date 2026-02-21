@@ -115,7 +115,7 @@ function Login() {
         </button>
       </div>
       <div className="forgot-container">
-        <Link to="/forgot-password" className="forgot-link">
+        <Link to="/ForgotPassword" className="forgot-link">
           Forgot Password?
         </Link>
       </div>
