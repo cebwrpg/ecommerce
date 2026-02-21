@@ -48,6 +48,9 @@ function Register() {
 
       if (response.data.success) {
         setMessage("✅ Registration Successful");
+        setTimeout(() => {
+          navigate("/Home"); // change route if needed
+        }, 100);
       } else {
         setMessage("❌ Registration Unsuccessful");
       }
