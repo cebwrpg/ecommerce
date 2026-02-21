@@ -50,7 +50,7 @@ function Register() {
         setMessage("✅ Registration Successful");
         setTimeout(() => {
           navigate("/Home"); // change route if needed
-        }, 1000);
+        }, 200);
       } else {
         setMessage("❌ Registration Unsuccessful");
       }
