@@ -6,13 +6,6 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Arial, sans-serif;
 }
-.home-container {
-  width: 100%;          /* ADD THIS */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 
 /* ================= BODY ================= */
 body {
@@ -22,6 +15,7 @@ body {
 /* ================= HOME CONTAINER ================= */
 .home-container {
   min-height: 100vh;
+  width: 1500px;
   display: flex;
   flex-direction: column;
 }
