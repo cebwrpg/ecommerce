@@ -3,7 +3,7 @@ import UserLayout from "../components/userLayout";
 import UserDetails from "../components/userDetails";
 import { Link, useNavigate } from "react-router-dom"; // ADD useNavigate
 import { loginUser } from "../api/UserApi";
-import "./login.css";
+import "../styles/Login.css";
 import { validateLogin } from "../components/validation.jsx";
 
 function Login() {

@@ -3,7 +3,7 @@ import UserDetails from "../components/userDetails";
 import UserLayout from "../components/userLayout";
 import { registerUser } from "../api/UserApi";
 import { Link } from "react-router-dom";
-import "./login.css";
+import "../styles/Login.css";
 import "./register.css";
 import { validateRegister } from "../components/validation.jsx";
 
