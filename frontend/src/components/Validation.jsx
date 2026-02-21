@@ -27,4 +27,3 @@ export const validateLogin = (email, password) => {
 
     return null;
 };
-
