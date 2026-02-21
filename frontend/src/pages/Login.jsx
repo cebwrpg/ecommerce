@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import UserLayout from "../components/userLayout";
 import UserDetails from "../components/userDetails";
-import { Link, useNavigate } from "react-router-dom"; // ADD useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/UserApi";
 import "../styles/Login.css";
 import { validateLogin } from "../components/validation.jsx";
 
+// ✅ Font Awesome (install if not added)
+// npm install @fortawesome/fontawesome-free
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 function Login() {
 
-  const navigate = useNavigate(); // INITIALIZE useNavigate
+  const navigate = useNavigate();
 
+  // 🔐 Form States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // ⭐ Role State
+  const [role, setRole] = useState("user");
+
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
+  // 🚀 Handle Login
   const handleLogin = async () => {
 
-    // Frontend validation
     const errorMessage = validateLogin(email, password);
     if (errorMessage) {
       setError(errorMessage);
@@ -28,23 +37,19 @@ function Login() {
     setMessage("");
 
     try {
-      const response = await loginUser(email, password);
+      // ✅ Send role also
+      const response = await loginUser(email, password, role);
 
       if (response.data.success) {
 
-        // 🔐 STORE TOKEN
-        localStorage.setItem(
-          "token",
-          response.data.token
-        );
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", role);
+
         setMessage("✅ Login Successful");
 
-        console.log("TOKEN:", response.data.token);
-
-        // 🚀 Redirect after login
         setTimeout(() => {
-          navigate("/Home"); // change route if needed
-        }, 100);
+          navigate("/Home");
+        }, 500);
 
       } else {
         setMessage("❌ Login Unsuccessful");
@@ -59,6 +64,36 @@ function Login() {
   return (
     <UserLayout title="Login Form">
 
+      {/* ⭐ ROLE TABS */}
+      <div className="role-tabs">
+
+        <div
+          className={`role-tab ${role === "user" ? "active" : ""}`}
+          onClick={() => setRole("user")}
+        >
+          <i className="fa-solid fa-user"></i>
+          <span>User</span>
+        </div>
+
+        <div
+          className={`role-tab ${role === "shop_owner" ? "active" : ""}`}
+          onClick={() => setRole("shop_owner")}
+        >
+          <i className="fa-solid fa-store"></i>
+          <span>Shop Owner</span>
+        </div>
+
+        <div
+          className={`role-tab ${role === "admin" ? "active" : ""}`}
+          onClick={() => setRole("admin")}
+        >
+          <i className="fa-solid fa-gear"></i>
+          <span>Admin</span>
+        </div>
+
+      </div>
+
+      {/* Inputs */}
       <UserDetails
         email={email}
         setEmail={setEmail}
@@ -92,10 +127,7 @@ function Login() {
         </button>
 
         <p>
-          <Link
-            to="/forgot-password"
-            className="register-Link"
-          >
+          <Link to="/forgot-password" className="register-Link">
             Forgot Password?
           </Link>
         </p>
@@ -104,10 +136,7 @@ function Login() {
       <div className="actions">
         <p>
           I don't have an account.?{" "}
-          <Link
-            to="/register"
-            className="register-link"
-          >
+          <Link to="/register" className="register-link">
             Register
           </Link>
         </p>
